@@ -13,8 +13,7 @@
   kubernetes.io/cluster/<cluster_name>
   ``` 
   
-  Atribua o valor **shared** para a TAG. 
-  
+* Atribua o valor **shared** para a TAG. 
 * Crie 2 route tables 
 * Crie um internet gateway - conecte a sua VPC
 * Crie um NAT Gateway em uma das suas subnetes publicas.
@@ -25,7 +24,7 @@
 
         kubectl get svc 
         
-* se a conexão funcionar deveria retornar um aviso assim:
+* se a conexão funcionar vai retornar um aviso assim:
 
 
 ![alt text](https://i.imgur.com/1qI1sSz.png)
@@ -38,7 +37,7 @@
 * Selecione o tipo de segredo (ex: Other Type of secrets)
 * Insira um **Secret key/value** (ex: *MY_API_TOKEN* e *osegredo*)
 * Next
-* Insira um **secret name** -- Ele vai ser usado como referência nos documentos (ex: *prod/service/token) 
+* Insira um **secret name** -- Ele vai ser usado como referência nos documentos (*ex: prod/service/token*) 
 * Não vamos dar permissões por aqui, e sim usando um **Role**. 
 * Next
 * **Store**
@@ -81,7 +80,7 @@
 ```
 * **Next:Tags**
 * **Next: Review**
-* Insira um nome único no campo **Name**. (*ex: APITokenReadAccess) -- O nome é importante e vai ser referenciado mais tarde
+* Insira um nome único no campo **Name**. (*ex: APITokenReadAccess*) -- O nome é importante e vai ser referenciado mais tarde
 * **Create Policy**
 
 ## 5 - Crie um IAM Role para a Conta de Serviço Kubernetes
@@ -103,7 +102,7 @@
 * Vá na aba **Trust Relationships** 
 * **Edit trust Relationship**
 * No editor do **Policy Document** desça até a última parte do text
-* Na parte *"StringEquals", no fim da linha, troque a palavra ***aud*** pela palavra ***sub***
+* Na parte *"StringEquals"*, no fim da linha, troque a palavra ***aud*** pela palavra ***sub***
 * E onde se encontra a **audience** colocada anteriormente, coloque a service account no ambiente de produção com o serviço aprensentado:
 
         "system:serviceaccount:production:nginx"
@@ -112,7 +111,7 @@
 
 ![Edit Trust Relationship](https://i.imgur.com/g1lBsBR.png)
 
-* **Update Trust Policy
+* **Update Trust Policy**
 
 # 6 - Associe o IAM role com o Kubernetes Account
 
@@ -216,7 +215,7 @@
 
 * O AWS provider para a Secret Store CSI Driver permite criar segredos guardados no Secret Manager e parâmetros criados no Parameter Store, aparecerem como arquivos montados nos pods do Kubernetes ou usá-los como variáveis de ambiente. É possível fazer usando **Helm**, mas por aqui vamos fazer usando arquivos yaml. 
 
-* Crie uma terceira pasta: ***aws-provider-installer**
+* Crie uma terceira pasta: ***aws-provider-installer***
 * Entre no diretório e copie o aquivo para criar um service account: *0-service-account.yaml*
 
 ![](https://i.imgur.com/lNcfmXr.png)
