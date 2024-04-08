@@ -1,0 +1,111 @@
+        env:
+        - name: ENVIRONMENT
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: ENVIRONMENT
+        - name: APP_URL
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: APP_URL
+        - name: POSTHOG_ENABLE
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: POSTHOG_ENABLE
+        - name: CLARITY_ENABLE
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: CLARITY_ENABLE
+        - name: AWS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: AWS_BUCKET
+        - name: REDIS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: REDIS_HOST
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: REDIS_PASSWORD
+        - name: REDIS_SCHEME
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: REDIS_SCHEME
+        - name: DB_CONNECTION
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_CONNECTION
+        - name: DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_PORT
+        - name: DB_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_DATABASE
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_USERNAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: DB_PASSWORD
+        - name: MAIL_MAILER
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_MAILER
+        - name: MAIL_HOST
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_HOST
+        - name: MAIL_PORT
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_PORT
+        - name: MAIL_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_USERNAME
+        - name: MAIL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_PASSWORD
+        - name: MAIL_FROM_ADDRESS
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_FROM_ADDRESS
+        - name: MAIL_FROM_NAME
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: MAIL_FROM_NAME
+        - name: GOOGLE_ANALYTICS_ENABLE
+          valueFrom:
+            secretKeyRef:
+              name: webapp-processes-secrets
+              key: GOOGLE_ANALYTICS_ENABLE
